@@ -86,9 +86,7 @@ const HeroSection = () => {
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <button onClick={() => scrollToSection('about')} className="p-2 rounded-full glass-panel hover:scale-110 transition-transform duration-300">
-            
-          </button>
+          
         </div>
       </div>
     </section>;
