@@ -1,7 +1,5 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowDown, Hand } from 'lucide-react';
-
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -89,11 +87,10 @@ const HeroSection = () => {
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button onClick={() => scrollToSection('about')} className="p-2 rounded-full glass-panel hover:scale-110 transition-transform duration-300">
-            <ArrowDown className="w-6 h-6 text-neon-blue" />
+            
           </button>
         </div>
       </div>
     </section>;
 };
-
 export default HeroSection;
