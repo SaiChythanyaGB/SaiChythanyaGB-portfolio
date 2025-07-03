@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowDown, Hand } from 'lucide-react';
+
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,6 +34,14 @@ const HeroSection = () => {
       });
     }
   };
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Sai Chaitanya\'s resume.PDF';
+    link.download = 'Sai Chaitanya\'s resume.PDF';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Floating background shapes */}
       <div className="floating-shape top-20 left-10 w-32 h-32 bg-gradient-to-r from-neon-blue/20 to-transparent rounded-full blur-xl" />
@@ -49,7 +58,7 @@ const HeroSection = () => {
 
           <h1 className="font-orbitron text-5xl md:text-7xl font-bold mb-6 gradient-text flex items-center justify-center gap-4">
             Hi, I'm Sai Chythanya GB 
-            <Hand className="w-12 h-12 md:w-16 md:h-16 text-neon-blue animate-wave" />
+            <Hand className="w-12 h-12 md:w-16 md:h-16 text-neon-blue animate-wave animate-shake" />
           </h1>
           
           <div className="mb-8 h-16">
@@ -71,7 +80,7 @@ const HeroSection = () => {
             <button onClick={() => scrollToSection('projects')} className="glass-button px-8 py-4 text-lg font-semibold">
               View Projects
             </button>
-            <button onClick={() => window.open('#', '_blank')} className="glass-button px-8 py-4 text-lg font-semibold">
+            <button onClick={downloadResume} className="glass-button px-8 py-4 text-lg font-semibold">
               Download Resume
             </button>
           </div>
@@ -85,4 +94,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
