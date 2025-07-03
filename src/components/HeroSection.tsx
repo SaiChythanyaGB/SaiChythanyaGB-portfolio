@@ -42,8 +42,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 text-center z-10">
         <div className="glass-panel p-12 max-w-4xl mx-auto animate-fade-in">
           <div className="mb-8 py-[20px] my-[10px]">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple p-1">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Sai Chythanya GB" className="w-full h-full rounded-full object-cover" />
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple p-1 py-[4px]">
+              <img alt="Sai Chythanya GB" className="w-full h-full rounded-full object-cover" src="/lovable-uploads/aba0deff-18cb-4f2f-86bf-c88f7dad8371.jpg" />
             </div>
           </div>
 
