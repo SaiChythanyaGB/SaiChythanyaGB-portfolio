@@ -1,13 +1,10 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowDown, Hand } from 'lucide-react';
-
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const phrases = ['AI & Machine Learning Developer', 'Full Stack Developer', 'Data Science Enthusiast', 'Problem Solver'];
-
   useEffect(() => {
     const currentPhrase = phrases[currentIndex];
     const timeout = setTimeout(() => {
@@ -26,10 +23,8 @@ const HeroSection = () => {
         }
       }
     }, isDeleting ? 50 : 100);
-
     return () => clearTimeout(timeout);
   }, [displayText, currentIndex, isDeleting, phrases]);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -38,9 +33,7 @@ const HeroSection = () => {
       });
     }
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Floating background shapes */}
       <div className="floating-shape top-20 left-10 w-32 h-32 bg-gradient-to-r from-neon-blue/20 to-transparent rounded-full blur-xl" />
       <div className="floating-shape top-40 right-20 w-48 h-48 bg-gradient-to-r from-neon-purple/20 to-transparent rounded-full blur-xl" />
@@ -48,7 +41,7 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-6 text-center z-10">
         <div className="glass-panel p-12 max-w-4xl mx-auto animate-fade-in">
-          <div className="mb-8 py-[20px]">
+          <div className="mb-8 py-[20px] my-[10px]">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple p-1">
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Sai Chythanya GB" className="w-full h-full rounded-full object-cover" />
             </div>
@@ -90,8 +83,6 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
