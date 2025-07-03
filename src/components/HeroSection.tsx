@@ -79,9 +79,7 @@ const HeroSection = () => {
             <button onClick={() => scrollToSection('projects')} className="glass-button px-8 py-4 text-lg font-semibold">
               View Projects
             </button>
-            <button onClick={downloadPhoto} className="glass-button px-8 py-4 text-lg font-semibold">
-              Download Photo
-            </button>
+            <button onClick={downloadPhoto} className="glass-button px-8 py-4 text-lg font-semibold">Download Resume</button>
           </div>
         </div>
 
