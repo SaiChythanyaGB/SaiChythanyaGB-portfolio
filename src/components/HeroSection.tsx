@@ -1,10 +1,13 @@
+
 import { useState, useEffect } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Hand } from 'lucide-react';
+
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const phrases = ['AI & Machine Learning Developer', 'Full Stack Developer', 'Data Science Enthusiast', 'Problem Solver'];
+
   useEffect(() => {
     const currentPhrase = phrases[currentIndex];
     const timeout = setTimeout(() => {
@@ -23,8 +26,10 @@ const HeroSection = () => {
         }
       }
     }, isDeleting ? 50 : 100);
+
     return () => clearTimeout(timeout);
   }, [displayText, currentIndex, isDeleting, phrases]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -33,7 +38,9 @@ const HeroSection = () => {
       });
     }
   };
-  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Floating background shapes */}
       <div className="floating-shape top-20 left-10 w-32 h-32 bg-gradient-to-r from-neon-blue/20 to-transparent rounded-full blur-xl" />
       <div className="floating-shape top-40 right-20 w-48 h-48 bg-gradient-to-r from-neon-purple/20 to-transparent rounded-full blur-xl" />
@@ -47,8 +54,9 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <h1 className="font-orbitron text-5xl md:text-7xl font-bold mb-6 gradient-text">
-            Hi, I'm Sai Chythanya GB 👋
+          <h1 className="font-orbitron text-5xl md:text-7xl font-bold mb-6 gradient-text flex items-center justify-center gap-4">
+            Hi, I'm Sai Chythanya GB 
+            <Hand className="w-12 h-12 md:w-16 md:h-16 text-neon-blue animate-wave" />
           </h1>
           
           <div className="mb-8 h-16">
@@ -82,6 +90,8 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;

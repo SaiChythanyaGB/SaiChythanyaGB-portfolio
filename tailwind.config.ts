@@ -134,6 +134,32 @@ export default {
 					'51%, 100%': {
 						borderColor: 'transparent'
 					}
+				},
+				'wave': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'10%': {
+						transform: 'rotate(14deg)'
+					},
+					'20%': {
+						transform: 'rotate(-8deg)'
+					},
+					'30%': {
+						transform: 'rotate(14deg)'
+					},
+					'40%': {
+						transform: 'rotate(-4deg)'
+					},
+					'50%': {
+						transform: 'rotate(10deg)'
+					},
+					'60%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(0deg)'
+					}
 				}
 			},
 			animation: {
@@ -142,7 +168,8 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'float': 'float 6s ease-in-out infinite',
 				'typing': 'typing 3.5s steps(40, end)',
-				'blink': 'blink 1s infinite'
+				'blink': 'blink 1s infinite',
+				'wave': 'wave 2s ease-in-out infinite'
 			}
 		}
 	},
