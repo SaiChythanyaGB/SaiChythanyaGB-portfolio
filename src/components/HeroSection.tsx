@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { ArrowDown, Hand } from 'lucide-react';
 
@@ -34,10 +35,10 @@ const HeroSection = () => {
       });
     }
   };
-  const downloadResume = () => {
+  const downloadPhoto = () => {
     const link = document.createElement('a');
-    link.href = '/Sai Chaitanya\'s resume.PDF';
-    link.download = 'Sai Chaitanya\'s resume.PDF';
+    link.href = '/lovable-uploads/aba0deff-18cb-4f2f-86bf-c88f7dad8371.jpg';
+    link.download = 'Sai_Chythanya_Photo.jpg';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -80,8 +81,8 @@ const HeroSection = () => {
             <button onClick={() => scrollToSection('projects')} className="glass-button px-8 py-4 text-lg font-semibold">
               View Projects
             </button>
-            <button onClick={downloadResume} className="glass-button px-8 py-4 text-lg font-semibold">
-              Download Resume
+            <button onClick={downloadPhoto} className="glass-button px-8 py-4 text-lg font-semibold">
+              Download Photo
             </button>
           </div>
         </div>
