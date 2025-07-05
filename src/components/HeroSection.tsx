@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { ArrowDown, Hand } from 'lucide-react';
+
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const phrases = ['AI & Machine Learning Developer', 'Full Stack Developer', 'Data Science Enthusiast', 'Problem Solver'];
+
   useEffect(() => {
     const currentPhrase = phrases[currentIndex];
     const timeout = setTimeout(() => {
@@ -23,8 +25,10 @@ const HeroSection = () => {
         }
       }
     }, isDeleting ? 50 : 100);
+
     return () => clearTimeout(timeout);
   }, [displayText, currentIndex, isDeleting, phrases]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -33,15 +37,18 @@ const HeroSection = () => {
       });
     }
   };
-  const downloadPhoto = () => {
+
+  const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/lovable-uploads/aba0deff-18cb-4f2f-86bf-c88f7dad8371.jpg';
-    link.download = 'Sai_Chythanya_Photo.jpg';
+    link.href = '/lovable-uploads/31144ece-72b9-4179-b07b-4af563aa73fa.png';
+    link.download = 'Sai_Chythanya_GB_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
-  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Floating background shapes */}
       <div className="floating-shape top-20 left-10 w-32 h-32 bg-gradient-to-r from-neon-blue/20 to-transparent rounded-full blur-xl" />
       <div className="floating-shape top-40 right-20 w-48 h-48 bg-gradient-to-r from-neon-purple/20 to-transparent rounded-full blur-xl" />
@@ -79,7 +86,9 @@ const HeroSection = () => {
             <button onClick={() => scrollToSection('projects')} className="glass-button px-8 py-4 text-lg font-semibold">
               View Projects
             </button>
-            <button onClick={downloadPhoto} className="glass-button px-8 py-4 text-lg font-semibold">Download Resume</button>
+            <button onClick={downloadResume} className="glass-button px-8 py-4 text-lg font-semibold">
+              Download Resume
+            </button>
           </div>
         </div>
 
@@ -87,6 +96,8 @@ const HeroSection = () => {
           
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
