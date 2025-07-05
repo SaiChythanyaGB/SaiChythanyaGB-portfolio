@@ -40,12 +40,23 @@ const HeroSection = () => {
   };
 
   const downloadResume = () => {
+    // Use window.open with _blank to avoid white screen issues
+    const downloadUrl = 'https://drive.google.com/uc?export=download&id=1h35r4Ya6Ttnxn52zQc-aXevjGbTmGH8E';
+    
+    // Try the anchor method first
     const link = document.createElement('a');
-    link.href = 'https://drive.google.com/uc?export=download&id=1h35r4Ya6Ttnxn52zQc-aXevjGbTmGH8E';
+    link.href = downloadUrl;
     link.download = 'Sai_Chythanya_GB_Resume.pdf';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    // Fallback: if anchor doesn't work, open in new window
+    setTimeout(() => {
+      window.open(downloadUrl, '_blank', 'noopener,noreferrer');
+    }, 100);
   };
 
   return (
