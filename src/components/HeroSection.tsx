@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { ArrowDown, Hand } from 'lucide-react';
 
@@ -40,7 +41,7 @@ const HeroSection = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/lovable-uploads/31144ece-72b9-4179-b07b-4af563aa73fa.png';
+    link.href = 'https://drive.google.com/uc?export=download&id=1h35r4Ya6Ttnxn52zQc-aXevjGbTmGH8E';
     link.download = 'Sai_Chythanya_GB_Resume.pdf';
     document.body.appendChild(link);
     link.click();
