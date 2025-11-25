@@ -70,7 +70,7 @@ const HeroSection = () => {
         <div className="glass-panel p-12 max-w-4xl mx-auto animate-fade-in">
           <div className="mb-8 py-[20px] my-[10px]">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple p-1 py-[4px]">
-              <img alt="Sai Chythanya GB" className="w-full h-full rounded-full object-cover" src="/lovable-uploads/aba0deff-18cb-4f2f-86bf-c88f7dad8371.jpg" />
+              <img alt="Sai Chythanya GB" className="w-full h-full rounded-full object-cover" src="/images/profile-photo.png" />
             </div>
           </div>
 
